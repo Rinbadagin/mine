@@ -1244,7 +1244,7 @@ end
 
 local function isOre(inspectFunction)
 	local success, data = inspectFunction()
-	if success and helper.stringEndsWith(data.name, "_ore") then
+	if success and (string.match(data.name, "ore") or string.match(data.name, "resource") then
 		return true
 	end
 	return false
